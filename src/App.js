@@ -5,7 +5,9 @@ import {
   Route,
   Link
 } from "react-router-dom";
+
 import './App.css';
+import Register from './components/Register';
 
 function App() {
   return (
@@ -28,11 +30,11 @@ function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/register">
-            <div></div>
+            <Register />
           </Route>
           <Route path="/">
-            <Home />
           </Route>
+            <div></div>
         </Switch>
       </div>
     </Router>
