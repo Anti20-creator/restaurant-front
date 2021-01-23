@@ -8,12 +8,13 @@ import {
 
 import './App.css';
 import Register from './components/Register';
+import HomePage from './components/HomePage/HomePage';
 
 function App() {
   return (
     <Router>
       <div>
-        <nav>
+        {/*<nav>
             <span>Restaurant</span>
 
             <div className="links">
@@ -24,7 +25,7 @@ function App() {
                   <Link to="/register">Register</Link>
                 </span>
             </div>
-        </nav>
+        </nav>*/}
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -33,6 +34,7 @@ function App() {
             <Register />
           </Route>
           <Route path="/">
+            <HomePage />
           </Route>
             <div></div>
         </Switch>
