@@ -43,7 +43,6 @@ function Register() {
             API.get('/userExists', {params : {
                     'email': signupData.email
             }}).then(available => {
-                
                 errorsToPush.email = available ? '' : 'Email is used!'
             })
 

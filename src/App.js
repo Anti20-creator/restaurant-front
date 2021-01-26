@@ -9,6 +9,7 @@ import {
 import './App.css';
 import Register from './components/Register';
 import HomePage from './components/HomePage/HomePage';
+import LoginPage from './components/LoginPage/LoginPage';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
         <Switch>
           <Route path="/register">
             <Register />
+          </Route>
+          <Route path="/login">
+            <LoginPage />
           </Route>
           <Route path="/">
             <HomePage />

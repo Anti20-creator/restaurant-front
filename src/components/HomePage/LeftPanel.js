@@ -1,14 +1,23 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import HomeIcon from '@material-ui/icons/Home'
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import SettingsIcon from '@material-ui/icons/Settings';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { Avatar } from '@material-ui/core'
 
+import API from '../../config'
 import MenuRow from './MenuRow'
 import ProfileRow from './ProfileRow';
 
 function LeftPanel() {
+
+    const [name, setName] = useState('')
+
+    useEffect(() => {
+        API.get('/myName').then(resp => {
+            setName(resp.data.name)
+        })
+    })
 
     const options = [
         {
@@ -54,7 +63,7 @@ function LeftPanel() {
                 })}
             </div>
             <div>
-                <ProfileRow Name="Amtmann Kristóf" />          
+                <ProfileRow Name={name} />          
             </div>
         </div>
     )
